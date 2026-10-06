@@ -1,0 +1,332 @@
+.pianoman-page{
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(1, 1, 58);
+  color: white;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  animation: fadeIn 0.4s ease-in;
+}
+
+
+.pianoman-page .container{
+  z-index: 2;
+  position: relative;
+  bottom: 155px;
+  text-align: center;
+  background-color: #00000033;
+  border-radius: 20px;
+  width: 300px;
+  height: 150px;
+  overflow: hidden;
+  padding: 20px 30px;
+  margin-bottom: -20px;
+  box-shadow: inset 0 0 40px 20px rgba(255, 255, 255, 0.5);
+}
+
+.pianoman-page.is-paused .note {
+  animation-play-state: paused;
+}
+
+.pianoman-page .pause-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 25;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.pianoman-page .pause-button:hover:not(:disabled) {
+  background: none;
+  filter: brightness(1.25);
+}
+
+.pianoman-page .pause-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.pianoman-page .pause-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pianoman-page .pause-button:focus-visible,
+.pianoman-page .pause-dialog button:focus-visible {
+  outline: 3px solid #ffd35b;
+  outline-offset: 2px;
+}
+
+
+.pianoman-page .staff {
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0;
+}
+
+
+@keyframes moveLeft {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    left: 320px;
+    opacity: 0;   /* Invisible when it first spawns */
+  }
+  15% {
+    opacity: 1;   /* Smoothly fades in right after entering the container */
+  }
+  80% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0;   /* Stays fully visible while moving across */
+  }
+  100% {
+    left: -40px;
+    opacity: 0;   /* Smoothly fades out as it exits the left padding */
+  }
+}
+
+
+/* Shared style for every note. animation-delay is set from JS.
+   If you change 5s, change ANIM_DURATION in pianoman.js too. */
+.pianoman-page .note{
+  display: inline-block;
+  position: absolute;
+  z-index: 4;
+  border-radius: 50%;
+  width: 35px;
+  height: 20px;
+  object-fit: cover;
+  background-color: rgb(251, 234, 0);
+  left: 500px;
+  animation: moveLeft 5s linear both;
+}
+
+
+/* Each pitch only sets its height on the staff */
+.pianoman-page .cnote{ top: 74px; }
+.pianoman-page .dnote{ top: 142px; }
+.pianoman-page .enote{ top: 131px; }
+.pianoman-page .fnote{ top: 119px; }
+.pianoman-page .gnote{ top: 108px; }
+.pianoman-page .anote{ top: 96px; }
+.pianoman-page .bnote{ top: 84px; }
+
+
+/* Song dropdown + status text */
+.pianoman-page .song-select{
+  position: absolute;
+  top: 85px;
+  z-index: 10;
+  padding: 8px 14px;
+  border: 1px solid white;
+  border-radius: 20px;
+  background: rgb(1, 1, 58);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.pianoman-page .song-select:hover{ background: rgba(255,255,255,0.2); }
+.pianoman-page .song-select option{
+  background: rgb(1, 1, 58);
+  color: white;
+}
+
+
+.pianoman-page .song-status{
+  position: absolute;
+  top: 130px;
+  z-index: 10;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+
+/* Difficulty buttons */
+.pianoman-page .difficulty{
+  position: absolute;
+  top: 155px;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+}
+
+
+.pianoman-page .difficulty button{
+  padding: 4px 12px;
+  border: 1px solid white;
+  border-radius: 14px;
+  background: transparent;
+  color: white;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+
+.pianoman-page .difficulty button.active{
+  background: white;
+  color: rgb(1, 1, 58);
+}
+
+
+.pianoman-page .logo {
+  margin-top: -20px;
+  width: 100%;
+  display: block;
+}
+
+
+.pianoman-page .containerlogo {
+  z-index: 1;
+  display: inline-block;
+  position: absolute;
+  bottom: -110px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  border-radius: 12px;
+  width: 430px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+
+.pianoman-page .containernotes {
+  position: absolute;
+  left: 50%;
+  display: flex;
+  z-index: 3;
+  bottom: 55px;
+  width: min(430px, calc(100% - 32px));
+  height: clamp(140px, 24vh, 220px);
+  box-sizing: border-box;
+  transform: translateX(-50%);
+  padding: 0;
+  border-radius: 30px;
+  border: 1px solid white;
+  overflow: hidden;
+}
+
+.pianoman-page .keyboard {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+
+.keys {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: 1px solid #777;
+  color: white;
+  background-color: black;
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+.keys:active {
+  color: black;
+  background-color: white;
+}
+
+
+.pianoman-page .line {
+  border-left: 3px solid white;
+  height: 200px;
+  position: absolute;
+  display: inline-block;
+  z-index: 4;
+  left: 80px;
+  top: 0px;
+}
+
+
+.pianoman-page .healthbar{
+  border-bottom: 3px solid yellow;
+  width: 300px;
+  position: absolute;
+  display: inline-block;
+  z-index: 5;
+  top: 30px;
+}
+
+
+.pianoman-page .score-board {
+  position: absolute;
+  top: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  z-index: 10;
+  color: #fff;
+}
+
+.pianoman-page .pause-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 24;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.pianoman-page .pause-dialog {
+  display: grid;
+  width: min(300px, 100%);
+  gap: 10px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  background: #091849;
+  box-shadow: 0 12px 36px #0008;
+  text-align: center;
+}
+
+.pianoman-page .pause-dialog h2 {
+  margin: 0 0 8px;
+  font: 700 28px Georgia, serif;
+}
+
+.pianoman-page .pause-dialog button {
+  min-height: 42px;
+  padding: 9px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 5px;
+  background: #102765;
+  color: white;
+  font: 700 14px Georgia, serif;
+  cursor: pointer;
+}
+
+.pianoman-page .pause-dialog button:first-of-type {
+  border-color: #ffd35b;
+  background: #ffd35b;
+  color: #171717;
+}
+
+.pianoman-page .pause-dialog button:hover {
+  filter: brightness(1.15);
+}

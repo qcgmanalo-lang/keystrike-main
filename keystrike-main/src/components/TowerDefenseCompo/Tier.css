@@ -1,0 +1,37 @@
+.tier {
+  position: relative;
+  width: auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: #f3ecdc;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  text-align: left;
+}
+
+.tier-label {
+  grid-area: label;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: lighter;
+  font-size: 17px;
+  color: #f0d76d;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tier-number {
+  grid-area: number;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: lighter;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tier-mobs {
+  display: none;
+}

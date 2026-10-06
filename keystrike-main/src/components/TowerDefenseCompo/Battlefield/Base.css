@@ -1,0 +1,17 @@
+.base {
+	position: absolute;
+	left: 50%;
+	bottom: calc(20vh + 8px);
+	z-index: 2;
+	display: grid;
+	justify-items: center;
+	gap: 3px;
+	transform: translateX(-50%);
+}
+
+.base-castle {
+	height: 64px;
+	font-size: 56px;
+	line-height: 1;
+	filter: drop-shadow(0 3px 1px #201344);
+}

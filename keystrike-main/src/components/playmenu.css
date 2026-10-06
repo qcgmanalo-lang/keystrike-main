@@ -1,0 +1,126 @@
+.playmenu-page {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    overflow: hidden;
+    background-color: rgb(1, 1, 58);
+    color: white;
+    animation: fadeIn 0.4s ease-in;
+  }
+
+  .playmenu-page::before {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background-image: var(--music-background);
+    background-position: center;
+    background-size: cover;
+    content: "";
+    opacity: 0.2;
+  }
+
+  .playmenu-page .back {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .playmenu-page .back:hover { transform: scale(1.08); }
+
+  .playmenu-page .pm {
+    position: relative;
+    z-index: 1;
+    margin: -24px 0 8px;
+    color: white;
+    font-family: "IM Fell French Canon", Georgia, serif;
+    font-size: 55px;
+  }
+
+  .playmenu-page .top-buttons {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: min(280px, calc(100% - 40px));
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .playmenu-page .top-buttons button,
+  .playmenu-page .minigame {
+    position: relative;
+    width: 100%;
+    height: 68px;
+    overflow: hidden;
+    border: 0;
+    border-radius: 10px;
+    font-family: "IM Fell French Canon", Georgia, serif;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.2s ease;
+  }
+
+  .playmenu-page .msclesson { background-color: rgba(5, 224, 97, 0.788); }
+  .playmenu-page .goal { background-color: rgba(214, 158, 3, 0.788); }
+
+  .playmenu-page .minigame {
+    z-index: 1;
+    width: min(280px, calc(100% - 40px));
+    height: 68px;
+    background-color: #087eaa;
+  }
+
+  .playmenu-page .top-buttons button a,
+  .playmenu-page .minigame a {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-height: inherit;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+  }
+
+  .playmenu-page .top-buttons button::before,
+  .playmenu-page .minigame::before {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+    content: "";
+  }
+
+  .playmenu-page .msclesson::before { background-image: var(--piano-image); opacity: 0.2; }
+  .playmenu-page .goal::before { background-image: var(--achievements-image); opacity: 0.4; }
+  .playmenu-page .minigame::before { background-image: var(--minigame-image); opacity: 0.25; }
+
+  .playmenu-page .top-buttons button:hover,
+  .playmenu-page .minigame:hover {
+    filter: brightness(1.12);
+    transform: scale(1.03);
+  }
+
+  .playmenu-page button:focus-visible a {
+    outline: 3px solid white;
+    outline-offset: -6px;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @media (max-width: 480px) {
+    .playmenu-page { gap: 14px; }
+    .playmenu-page .pm { font-size: 44px; }
+  }

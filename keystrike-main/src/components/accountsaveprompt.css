@@ -1,0 +1,66 @@
+.account-save-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.74);
+}
+
+.account-save-dialog {
+  display: grid;
+  width: min(340px, 100%);
+  gap: 10px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  background: #091849;
+  color: #fff;
+  box-shadow: 0 12px 36px #0008;
+  text-align: center;
+}
+
+.account-save-dialog h2 {
+  margin: 0 0 4px;
+  font: 700 24px Georgia, serif;
+}
+
+.account-save-dialog p {
+  margin: 0 0 8px;
+  color: rgba(255, 255, 255, 0.78);
+  font: 14px/1.45 Georgia, serif;
+}
+
+.account-save-dialog button {
+  min-height: 42px;
+  padding: 9px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 5px;
+  background: #102765;
+  color: #fff;
+  font: 700 14px Georgia, serif;
+  cursor: pointer;
+}
+
+.account-save-dialog button:first-of-type {
+  border-color: #ffd35b;
+  background: #ffd35b;
+  color: #171717;
+}
+
+.account-save-dialog .account-save-guest {
+  border-color: transparent;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+}
+
+.account-save-dialog button:hover {
+  filter: brightness(1.12);
+}
+
+.account-save-dialog button:focus-visible {
+  outline: 3px solid #ffd35b;
+  outline-offset: 2px;
+}

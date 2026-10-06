@@ -1,0 +1,42 @@
+.hpbar {
+  position: relative;
+  width: 140px;
+  box-sizing: border-box;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.hpbar-track {
+  position: relative;
+  width: 100%;
+  height: 23px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #d94f43, #f1ca54, #8bd23e);
+  border: 1px solid #10121d;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px #0008;
+}
+
+.hpbar-cover {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  background: #1b1714;
+  transition: width 0.3s ease;
+}
+
+.hpbar-text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  transform: translateY(-50%);
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: lighter;
+  font-size: 17px;
+  color: #f3ecdc;
+  text-shadow: 0 1px 3px #000;
+  pointer-events: none;
+}

@@ -1,0 +1,70 @@
+.note-track {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  background: transparent;
+  border: none;
+  pointer-events: none;
+}
+
+.falling-key {
+  position: absolute;
+  top: 15%;
+  z-index: 3;
+  display: grid;
+  place-items: end center;
+  width: 26px;
+  height: 42px;
+  padding-bottom: 5px;
+  box-sizing: border-box;
+  transform: translateX(-50%);
+  border: 1px solid #171717;
+  border-top: 0;
+  border-radius: 0 0 4px 4px;
+  background: #fff;
+  color: #171717;
+  font: 700 11px Georgia, serif;
+  box-shadow: 0 2px 0 #b9b9b9, 0 4px 8px #0005;
+  animation: key-drop linear forwards;
+  will-change: top;
+}
+
+.falling-key.sharp-key {
+  width: 23px;
+  height: 36px;
+  border: 0;
+  border-radius: 0 0 3px 3px;
+  background: #171717;
+  color: #fff;
+  box-shadow: 0 3px 7px #0008;
+}
+
+.monster-journey {
+  position: absolute;
+  top: 52%;
+  left: -58px;
+  width: 216.87px;
+  height: 108.87px;
+  object-fit: contain;
+  transform: translate(-25.55%, -25.55%);
+  animation: monster-approach linear forwards;
+  filter: drop-shadow(0 3px 2px #0008);
+  will-change: left;
+}
+
+@keyframes key-drop {
+  from { top: 15%; }
+  to { top: calc(100% - 12px - clamp(105px, 20vh, 160px) - 46px); }
+}
+
+@keyframes monster-approach {
+  from { left: -58px; }
+  to { left: 65%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .falling-key,
+  .monster-journey {
+    animation-duration: 18s !important;
+  }
+}

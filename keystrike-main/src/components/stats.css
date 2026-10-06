@@ -1,0 +1,151 @@
+.stats-page {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 72px 24px 30px;
+  overflow: hidden;
+  background: #071136;
+  color: #fff;
+}
+
+.stats-page::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background-image: linear-gradient(rgba(2, 10, 34, 0.8), rgba(2, 10, 34, 0.94)), var(--music-background);
+  background-position: center;
+  background-size: cover;
+  content: "";
+}
+
+.stats-back {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.stats-back img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.stats-header,
+.stats-summary,
+.stats-modes,
+.stats-runs,
+.stats-message {
+  width: min(820px, 100%);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.stats-header {
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.stats-header h1 {
+  margin: 0 0 6px;
+  font: 42px "IM Fell French Canon", Georgia, serif;
+}
+
+.stats-header p,
+.stats-message,
+.stats-runs {
+  color: rgba(255, 255, 255, 0.75);
+  font: 14px Georgia, serif;
+}
+
+.stats-message,
+.stats-runs {
+  text-align: center;
+}
+
+.stats-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.stats-summary article {
+  display: grid;
+  min-height: 84px;
+  align-content: center;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  background: rgba(4, 15, 44, 0.78);
+}
+
+.stats-summary span {
+  color: rgba(255, 255, 255, 0.72);
+  font: 13px Georgia, serif;
+}
+
+.stats-summary strong {
+  color: #f0d76d;
+  font: 700 23px Georgia, serif;
+}
+
+.stats-modes h2 {
+  margin: 0 0 12px;
+  font: 26px "IM Fell French Canon", Georgia, serif;
+}
+
+.stats-mode {
+  margin-bottom: 10px;
+  padding: 15px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  background: rgba(4, 15, 44, 0.72);
+}
+
+.stats-mode h3 {
+  margin: 0 0 12px;
+  color: #f0d76d;
+  font: 20px "IM Fell French Canon", Georgia, serif;
+}
+
+.stats-mode dl {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+.stats-mode dl div {
+  display: grid;
+  gap: 5px;
+}
+
+.stats-mode dt {
+  color: rgba(255, 255, 255, 0.65);
+  font: 12px Georgia, serif;
+}
+
+.stats-mode dd {
+  margin: 0;
+  font: 600 15px Georgia, serif;
+}
+
+.stats-runs {
+  margin-top: 18px;
+}
+
+@media (max-width: 600px) {
+  .stats-page { padding: 72px 14px 24px; }
+  .stats-header h1 { font-size: 34px; }
+  .stats-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats-mode dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

@@ -1,0 +1,18 @@
+.mob-count {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 13px;
+	color: #fff;
+	font: 600 17px/1 Georgia, serif;
+	white-space: nowrap;
+	text-align: right;
+	text-shadow: 0 1px 3px #071136;
+}
+
+.mob-count span + span::before {
+	content: "·";
+	margin-right: 10px;
+	color: #f0d76d;
+}

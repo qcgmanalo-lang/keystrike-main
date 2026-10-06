@@ -1,0 +1,251 @@
+    .mainmenu-page {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(1, 1, 58);
+
+    min-height: 100vh;
+    margin: 0;
+    animation: fadeIn 0.4s ease-in;
+    }
+
+    @keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+    }
+
+    .mainmenu-page .mainmenu {
+        margin-top: -30px;
+        font-family: "IM Fell French Canon", sans-serif;
+        color: white;
+        font-size: 55px;
+        letter-spacing: -2px;
+    }
+
+    .mainmenu-page .playmenu {
+        position: relative;
+        overflow: hidden;
+
+        
+        font-family: "IM Fell French Canon", sans-serif;
+        font-weight: bold;
+        width: 280px;
+        height: 68px;
+        border-radius: 12px;
+        border: none;
+        background-color: rgba(5, 224, 97, 0.788);
+        transform: scale(1);
+        transition: transform 0.3s ease;
+
+    }
+
+
+    .mainmenu-page .playmenu::before {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+            background-image: var(--piano-image);
+            background-size: cover;
+            background-position: center;
+
+            opacity: 0.2;
+    }
+
+    .mainmenu-page .playmenu a {
+        position: relative;
+        z-index: 1;
+
+        width: 100%;
+        height: 100%;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+    }
+
+    .mainmenu-page .stats {
+        position: relative;
+        overflow: hidden;
+        font-family: "IM Fell French Canon", sans-serif;
+        
+        font-weight: bold;
+        width: 280px;
+        height: 68px;
+        border-radius: 12px;
+        background-color: rgba(214, 158, 3, 0.788);
+        transform: scale(1);
+        transition: transform 0.3s ease;
+    }
+
+    
+
+    .mainmenu-page .stats a {
+        position: relative;
+        z-index: 1;
+        text-decoration: none;
+        color: white;
+        width: 100%;
+        height: 100%;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px; 
+        
+    }
+
+    .mainmenu-page .stats::before {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+            background-image: var(--achievements-image);
+            background-size: cover;
+            background-position: center;
+
+            opacity: 0.4;
+    }
+
+    .mainmenu-page .settings {
+        position: relative;
+        overflow: hidden;
+        font-family: "IM Fell French Canon", sans-serif;
+        font-weight: bold;
+        width: 280px;
+        height: 68px;
+        border-radius: 12px;
+        background-color: rgba(3, 147, 214, 0.788);
+        font-size: 20px;
+        transform: scale(1);
+        transition: transform 0.3s ease;
+    }
+
+    .mainmenu-page .profile {
+        position: relative;
+        overflow: hidden;
+        font-family: "IM Fell French Canon", sans-serif;
+        font-weight: bold;
+        width: 280px;
+        height: 68px;
+        border-radius: 12px;
+        border: none;
+        background-color: rgba(49, 116, 166, 0.88);
+        font-size: 20px;
+        transform: scale(1);
+        transition: transform 0.3s ease;
+    }
+
+    .mainmenu-page .profile a {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+    }
+
+    .mainmenu-page .settings a {
+        text-decoration: none;
+        color: white;
+        width: 100%;
+        height: 100%;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mainmenu-page .back {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        
+        font-size: 24px;
+        border: none;
+        background: transparent;
+
+        cursor: pointer;
+
+        transition: transform 0.2s ease;
+    }
+
+    .mainmenu-page .back a {
+            text-decoration: none;
+        color: white;
+    }
+
+    .mainmenu-page .settings::before {
+        
+        content: "";
+
+        position: absolute;
+        inset: 0;
+
+            background-image: var(--settings-image);
+            background-size: cover;
+            background-position: center;
+
+            opacity: 0.4;
+    }
+
+    .mainmenu-page .back:hover {
+        transform: scale(1.2);
+    }
+
+    .mainmenu-page .back:active {
+        transform: scale(1.35);
+    }
+
+    .mainmenu-page .playmenu:hover, .mainmenu-page .stats:hover, .mainmenu-page .settings:hover, .mainmenu-page .profile:hover {
+        transform: scale(1.05);
+       
+    }
+
+    .mainmenu-page .back {
+
+    margin-top: -10px;
+    margin-bottom: -90px;
+    width: 80px;
+    height: 80px;
+    margin-right: 400px;
+   
+}
+
+.mainmenu-page::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background-image: var(--music-background);
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0.2;
+
+    z-index: 0;
+}
+
+.mainmenu-page h1,
+.mainmenu-page button {
+    position: relative;
+    z-index: 1;
+}
+
+.mainmenu-page .back {
+    position: absolute;
+}

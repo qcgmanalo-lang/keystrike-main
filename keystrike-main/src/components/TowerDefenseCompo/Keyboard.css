@@ -1,0 +1,16 @@
+.keyboard {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    width: min(92vw, 350px);
+    z-index: 5;
+}
+
+.key-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: clamp(105px, 20vh, 160px);
+}

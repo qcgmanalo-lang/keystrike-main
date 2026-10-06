@@ -1,0 +1,142 @@
+.goal-page {
+	position: relative;
+	isolation: isolate;
+	min-height: 100vh;
+	box-sizing: border-box;
+	padding: 72px 24px 32px;
+	overflow: hidden;
+	background: #071136;
+	color: #fff;
+}
+
+.goal-page::before {
+	position: fixed;
+	z-index: -1;
+	inset: 0;
+	background-image: linear-gradient(rgba(2, 10, 34, 0.78), rgba(2, 10, 34, 0.92)), var(--music-background);
+	background-position: center;
+	background-size: cover;
+	content: "";
+}
+
+.goal-back {
+	position: absolute;
+	top: 14px;
+	left: 14px;
+	width: 48px;
+	height: 48px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+}
+
+.goal-back img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.goal-header,
+.achievement-list,
+.goal-message {
+	width: min(760px, 100%);
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.goal-header {
+	margin-bottom: 24px;
+	text-align: center;
+}
+
+.goal-header h1 {
+	margin: 0 0 8px;
+	font: 42px "IM Fell French Canon", Georgia, serif;
+}
+
+.goal-header p,
+.goal-message {
+	color: rgba(255, 255, 255, 0.78);
+	font-family: Georgia, serif;
+}
+
+.goal-message {
+	text-align: center;
+}
+
+.achievement-list {
+	display: grid;
+	gap: 10px;
+}
+
+.achievement {
+	display: grid;
+	grid-template-columns: 1fr minmax(100px, 160px);
+	align-items: center;
+	gap: 20px;
+	padding: 16px 18px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	border-radius: 6px;
+	background: rgba(4, 15, 44, 0.72);
+}
+
+.achievement.is-unlocked {
+	border-color: rgba(240, 215, 109, 0.65);
+}
+
+.achievement h2 {
+	margin: 0 0 5px;
+	font: 20px "IM Fell French Canon", Georgia, serif;
+}
+
+.achievement p {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.72);
+	font: 14px/1.4 Georgia, serif;
+}
+
+.achievement-status {
+	display: grid;
+	gap: 8px;
+	color: #f0d76d;
+	font: 600 13px Georgia, serif;
+	text-align: right;
+}
+
+.achievement-track {
+	height: 7px;
+	overflow: hidden;
+	border-radius: 5px;
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.achievement-track span {
+	display: block;
+	height: 100%;
+	background: #f0d76d;
+	transition: width 0.25s ease;
+}
+
+@media (max-width: 520px) {
+	.goal-page {
+		padding: 72px 14px 24px;
+	}
+
+	.goal-header h1 {
+		font-size: 34px;
+	}
+
+	.achievement {
+		grid-template-columns: 1fr;
+		gap: 12px;
+		padding: 14px;
+	}
+
+	.achievement-status {
+		grid-template-columns: auto 1fr;
+		align-items: center;
+		text-align: left;
+	}
+}

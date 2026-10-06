@@ -1,0 +1,147 @@
+.minigame-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(1, 1, 58);
+
+  min-height: 100vh;
+  margin: 0;
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+.minigame-page .back {
+
+    margin-top: 10px;
+    margin-bottom: 0px;
+    width: 80px;
+    height: 80px;
+    margin-right: 290px;
+   
+}
+.minigame-page .welcome{
+    color:white;
+    font-family: "IM Fell French Canon", sans-serif;
+    font-weight: lighter;
+    margin-bottom:0;
+    letter-spacing: -1px;
+
+}
+
+.minigame-page .description{
+    color:white;
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+
+.minigame-page .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 330px;
+    height: 330px;
+    border: 2px solid rgb(1, 1, 114);
+    background-color: rgb(219, 149, 0);
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: scale(1);
+}
+
+
+.minigame-page .wireframe {
+    width: 300px;
+    height: 140px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 18px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.minigame-page .divtext {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.minigame-page .text {
+    margin-top: 10px;
+    font-family: "IM Fell French Canon", sans-serif;
+    position: relative;
+    width: 80x;
+
+    font-size: 50px;
+    text-decoration: none;
+    color: rgb(1, 1, 114);
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom:-10px;
+    letter-spacing: -2px;
+
+}
+.minigame-page .tdbutton{
+    margin-top: 0px;
+    margin: 0 auto;
+    width: 100px;
+    height: 40px;
+    border-radius: 12px;
+    background-color:  rgb(1, 1, 114);
+    font-family: "IM Fell French Canon", sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(207, 207, 207);
+    font-size: 20px;
+    padding: 24px 130px;
+    
+}
+
+.minigame-page .tdbutton a {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+    text-decoration: none;
+    color: rgb(252, 252, 252);
+    width: 100%;
+    height: 100%;
+    
+    
+}
+
+.minigame-page .tddescription{
+    margin-top: 10px;
+    font-family: "Inter", sans-serif;
+    position: relative;
+    width: 80x;
+    letter-spacing: -1px;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(1, 1, 114);
+    
+ 
+}
+
+.minigame-page .tdbutton:hover{
+
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}

@@ -1,0 +1,208 @@
+body {
+	background: #071744;
+	margin: 0;
+	min-height: 100vh;
+}
+
+.game-container {
+	position: relative;
+	width: min(100vw, 47.45vh);
+	width: min(100vw, 47.45svh);
+	margin: 0 auto;
+	height: 100vh;
+	height: 100svh;
+	overflow: hidden;
+	background: var(--tower-defense-background) center center / 106% 102% no-repeat,
+		linear-gradient(180deg, #091849 0%, #102765 70%, #192b62 100%);
+	color: #fff;
+}
+
+.game-hud {
+	position: absolute;
+	top: 18px;
+	left: 18px;
+	right: 76px;
+	z-index: 4;
+	display: grid;
+	grid-template-columns: 1fr auto;
+	grid-template-areas:
+		"health health"
+		"tier mobs";
+	align-items: center;
+	gap: 10px 14px;
+}
+
+.note-track,
+.base {
+	z-index: 2;
+}
+
+.game-container.is-paused .note-track * {
+	animation-play-state: paused;
+}
+
+.game-hud .hpbar {
+	grid-area: health;
+	width: 100%;
+	margin: 0;
+}
+
+.game-hud .tier {
+	grid-area: tier;
+}
+
+.game-hud .mob-count {
+	grid-area: mobs;
+}
+
+.game-score {
+	position: absolute;
+	top: 126px;
+	right: 18px;
+	z-index: 4;
+	color: #f0d76d;
+	font: 700 17px Georgia, serif;
+	text-shadow: 0 1px 4px #071136;
+}
+
+.game-over {
+	position: absolute;
+	inset: 0;
+	z-index: 10;
+	display: grid;
+	align-content: center;
+	justify-items: center;
+	gap: 14px;
+	background: #071744d9;
+	color: #fff;
+	font: 24px Georgia, serif;
+}
+
+.game-over button {
+	padding: 10px 18px;
+	border: 2px solid #151515;
+	border-radius: 5px;
+	background: #ffd35b;
+	color: #171717;
+	font: 700 15px Georgia, serif;
+	cursor: pointer;
+}
+
+.tower-defense-back {
+	position: absolute;
+	top: 12px;
+	left: 14px;
+	z-index: 6;
+	width: 48px;
+	height: 48px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+}
+
+.tower-defense-pause {
+	position: absolute;
+	top: 12px;
+	right: 14px;
+	z-index: 8;
+	min-width: 68px;
+	min-height: 40px;
+	padding: 8px 14px;
+	border: 1px solid rgba(255, 255, 255, 0.7);
+	border-radius: 5px;
+	background: #102765;
+	color: #fff;
+	font: 700 14px Georgia, serif;
+	cursor: pointer;
+}
+
+.tower-defense-pause:hover {
+	background: #19418f;
+}
+
+.tower-defense-pause:focus-visible {
+	outline: 3px solid #ffd35b;
+	outline-offset: 2px;
+}
+
+.game-paused {
+	position: absolute;
+	inset: 0;
+	z-index: 7;
+	display: grid;
+	place-items: center;
+	background: #071744a8;
+	color: #fff;
+}
+
+.game-paused-dialog {
+	display: grid;
+	width: min(280px, calc(100% - 40px));
+	gap: 10px;
+	padding: 24px;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	border-radius: 8px;
+	background: #091849;
+	box-shadow: 0 12px 36px #0008;
+	text-align: center;
+}
+
+.game-paused-dialog h2 {
+	margin: 0 0 8px;
+	font: 700 28px Georgia, serif;
+	text-shadow: 0 2px 5px #000;
+}
+
+.game-paused-dialog button {
+	min-height: 42px;
+	padding: 9px 14px;
+	border: 1px solid rgba(255, 255, 255, 0.65);
+	border-radius: 5px;
+	background: #102765;
+	color: #fff;
+	font: 700 14px Georgia, serif;
+	cursor: pointer;
+}
+
+.game-paused-dialog button:first-of-type {
+	border-color: #ffd35b;
+	background: #ffd35b;
+	color: #171717;
+}
+
+.game-paused-dialog button:hover {
+	filter: brightness(1.15);
+}
+
+.game-over span {
+	font: 14px Georgia, serif;
+}
+
+.tower-defense-back img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+@media (max-width: 360px) {
+	.game-hud {
+		left: 12px;
+		right: 68px;
+		gap: 8px;
+	}
+
+	.game-score {
+		top: 136px;
+		right: 12px;
+	}
+
+	.tower-defense-back {
+		left: 8px;
+	}
+
+	.tower-defense-pause {
+		right: 8px;
+	}
+}

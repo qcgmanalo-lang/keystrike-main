@@ -1,0 +1,218 @@
+.profile-page {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 72px 24px 32px;
+  overflow: hidden;
+  background: #071136;
+  color: #fff;
+}
+
+.profile-page::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background-image: linear-gradient(rgba(2, 10, 34, 0.8), rgba(2, 10, 34, 0.94)), var(--music-background);
+  background-position: center;
+  background-size: cover;
+  content: "";
+}
+
+.profile-back {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.profile-back img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.profile-header,
+.profile-content {
+  width: min(780px, 100%);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.profile-header {
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.profile-header h1 {
+  margin: 0 0 6px;
+  font: 42px "IM Fell French Canon", Georgia, serif;
+}
+
+.profile-header p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font: 14px Georgia, serif;
+}
+
+.profile-content {
+  display: grid;
+  gap: 14px;
+}
+
+.profile-section {
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  background: rgba(4, 15, 44, 0.8);
+}
+
+.profile-section h2 {
+  margin: 0 0 12px;
+  color: #f0d76d;
+  font: 22px "IM Fell French Canon", Georgia, serif;
+}
+
+.profile-section p {
+  color: rgba(255, 255, 255, 0.76);
+  font: 14px/1.45 Georgia, serif;
+}
+
+.profile-section code {
+  display: block;
+  margin: 0 0 18px;
+  overflow-wrap: anywhere;
+  color: rgba(255, 255, 255, 0.8);
+  font: 13px/1.4 Consolas, monospace;
+}
+
+.profile-section label {
+  display: block;
+  margin: 10px 0 6px;
+  color: rgba(255, 255, 255, 0.78);
+  font: 13px Georgia, serif;
+}
+
+.profile-section input {
+  min-width: 0;
+  min-height: 42px;
+  box-sizing: border-box;
+  padding: 9px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 5px;
+  background: #fff;
+  color: #171717;
+  font: 15px Georgia, serif;
+}
+
+.profile-name-row {
+  display: flex;
+  gap: 8px;
+}
+
+.profile-name-row input {
+  flex: 1;
+}
+
+.profile-page button:not(.profile-back) {
+  min-height: 42px;
+  padding: 9px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 5px;
+  background: #102765;
+  color: #fff;
+  font: 700 14px Georgia, serif;
+  cursor: pointer;
+}
+
+.profile-page button:hover:not(:disabled) {
+  filter: brightness(1.12);
+}
+
+.profile-page button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.profile-page button:focus-visible,
+.profile-page input:focus-visible {
+  outline: 3px solid #ffd35b;
+  outline-offset: 2px;
+}
+
+.profile-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.profile-summary article {
+  display: grid;
+  min-height: 78px;
+  align-content: center;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  background: rgba(4, 15, 44, 0.8);
+}
+
+.profile-summary span {
+  color: rgba(255, 255, 255, 0.7);
+  font: 12px Georgia, serif;
+}
+
+.profile-summary strong {
+  color: #f0d76d;
+  font: 700 21px Georgia, serif;
+}
+
+.profile-account-form {
+  display: grid;
+}
+
+.profile-account-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.profile-account-actions button:first-child {
+  border-color: #ffd35b !important;
+  background: #ffd35b !important;
+  color: #171717 !important;
+}
+
+.profile-message { color: #97e2bd !important; }
+.profile-error { color: #ff9b9b !important; }
+
+.profile-connected button {
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .profile-page { padding: 72px 14px 24px; }
+  .profile-header h1 { font-size: 34px; }
+  .profile-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .profile-account-actions { grid-template-columns: 1fr; }
+  .profile-name-row { flex-direction: column; }
+}
+
+.profile-reset-password {
+  justify-self: end;
+  min-height: auto !important;
+  margin-top: 4px;
+  padding: 2px 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: #f0d76d !important;
+  font-size: 13px !important;
+  text-decoration: underline;
+}
