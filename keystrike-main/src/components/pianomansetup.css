@@ -1,0 +1,316 @@
+.pianoman-setup {
+  position: absolute;
+  z-index: 20;
+
+
+  top: 50%;
+  left: 50%;
+
+
+  transform: translate(-50%, -50%);
+
+
+  width: 330px;
+  min-height: 500px;
+
+
+  background: rgb(15, 5, 95);
+
+
+  border-radius: 12px;
+
+
+  overflow: hidden;
+
+
+  color: white;
+
+
+  text-align: center;
+}
+
+
+
+
+/* TABS */
+
+
+.pianoman-tabs {
+  display: flex;
+  width: 100%;
+}
+
+
+.pianoman-tabs button {
+  flex: 1;
+
+
+  padding: 18px 5px;
+
+
+  border: none;
+
+
+  background: rgb(10, 3, 65);
+
+
+  color: white;
+
+
+  font-size: 17px;
+
+
+  cursor: pointer;
+}
+
+
+.pianoman-tabs button.active {
+  background: rgb(30, 15, 125);
+
+
+  border-bottom: 3px solid white;
+}
+
+
+
+
+/* DIFFICULTY */
+
+
+.difficulty-tab {
+  padding: 30px 20px;
+}
+
+
+.difficulty-tab h1,
+.songs-tab h1 {
+  margin: 0 0 30px;
+
+
+  font-size: 32px;
+
+
+  font-weight: 400;
+}
+
+
+
+
+.difficulty-tab button {
+  display: block;
+
+
+  width: 145px;
+  height: 62px;
+
+
+  margin: 0 auto 28px;
+
+
+  border: none;
+
+
+  border-radius: 10px;
+
+
+  color: white;
+
+
+  font-size: 32px;
+
+
+  cursor: pointer;
+
+
+  transition: 0.15s;
+}
+
+
+
+
+.difficulty-tab button:hover {
+  transform: scale(1.03);
+}
+
+
+
+
+.difficulty-tab .easy {
+  background: #00c96b;
+}
+
+
+
+
+.difficulty-tab .medium {
+  background: #ffd83d;
+  color: white;
+}
+
+
+
+
+.difficulty-tab .hard {
+  background: #ff3030;
+}
+
+
+
+
+.difficulty-tab button.selected {
+  outline: 4px solid white;
+  outline-offset: 3px;
+}
+
+
+
+
+/* SONGS */
+
+
+.songs-tab {
+  padding: 25px 20px;
+}
+
+
+
+
+.songs-tab h1 {
+  margin-bottom: 20px;
+}
+
+
+
+
+.songs-tab .song {
+  display: block;
+
+
+  width: 100%;
+
+
+  min-height: 50px;
+
+
+  margin-bottom: 10px;
+
+
+  padding: 10px;
+
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+
+  border-radius: 8px;
+
+
+  background: rgba(255, 255, 255, 0.08);
+
+
+  color: white;
+
+
+  font-size: 16px;
+
+
+  text-align: left;
+
+
+  cursor: pointer;
+}
+
+
+
+
+.songs-tab .song:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+
+
+
+.songs-tab .song.selected {
+  background: white;
+
+
+  color: rgb(15, 5, 95);
+
+
+  font-weight: bold;
+}
+
+
+
+
+/* SELECTED INFORMATION */
+
+
+.selected-info {
+  margin: 5px 20px 15px;
+
+
+  padding: 10px;
+
+
+  border-radius: 8px;
+
+
+  background: rgba(0, 0, 0, 0.25);
+
+
+  font-size: 14px;
+}
+
+
+
+
+.selected-info p {
+  margin: 4px 0;
+}
+
+
+
+
+/* START */
+
+
+.start-button {
+  width: calc(100% - 40px);
+
+
+  height: 50px;
+
+
+  margin: 0 20px 20px;
+
+
+  border: none;
+
+
+  border-radius: 10px;
+
+
+  background: white;
+
+
+  color: rgb(15, 5, 95);
+
+
+  font-size: 18px;
+
+
+  font-weight: bold;
+
+
+  cursor: pointer;
+}
+
+
+
+
+.start-button:disabled {
+  opacity: 0.4;
+
+
+  cursor: not-allowed;
+}
